@@ -1,3 +1,5 @@
+// to be used with face_pointer.py
+
 #include "ESP8266WiFi.h"
 #include <Stepper.h>
 

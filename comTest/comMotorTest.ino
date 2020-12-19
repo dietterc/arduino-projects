@@ -27,36 +27,9 @@ void setup() {
 }
 
 void loop() {
+  
+  myStepper1.step(-20);
+  delay(1000)
+  myStepper1.step(20);
 
-  WiFiClient client = wifiServer.available();
- 
-  if (client) {
-    while (client.connected()) {
-      //client loop
-      while (client.available()>0) {
-        int c = (int) client.read();
-        
-
-        if(c=='u') {
-          myStepper1.step(-1);
-        }
-        else if(c=='d') {
-          myStepper1.step(1);
-        }
-        else if(c=='l') {
-          myStepper2.step(-1);
-        }
-        else if(c=='r') {
-          myStepper2.step(1);
-        }
-        
-   
-        Serial.write(c);
-        delay(10);
-      }
-      delay(10);
-    }
-    client.stop();
-    Serial.println("\nClient disconnected");
-  }
 }

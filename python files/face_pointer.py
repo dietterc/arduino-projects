@@ -1,11 +1,14 @@
+#Uses the camera and two motors to point a chopstick at someones face.
+
 import socket
 from time import sleep
 import datetime
 import cv2
 import math
 
+#connect to the arduino controlling the motors
 arduino = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-arduino.connect(('192.168.0.179', 80))
+arduino.connect(('192.168.0.178', 80))
 
 #current position of the motors bound by 200 (200 steps per motor)
 xMotor = 50     #starts in the middle
